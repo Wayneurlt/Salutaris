@@ -27,12 +27,7 @@
           </div>
         </div>
   
-       
-        <!-- <img
-          class="order-1 object-cover lg:order-2 w-full h-72 lg:h-96 lg:mt-12"
-          src="/assets/images/log.png"
-          alt="Salutaris Outreach Program"
-        /> -->
+      
       </div>
     </section>
   </template>

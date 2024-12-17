@@ -10,12 +10,12 @@
             class="absolute inset-0 object-cover w-full h-full"
           />
           <!-- Overlay Content -->
-          <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40 relative z-10">
+          <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-60 relative z-10">
             <div>
               <h2 class="text-2xl font-bold text-white sm:text-3xl">
                 Join Our Mission
               </h2>
-              <p class="max-w-xl mt-3 text-gray-300">
+              <p class="max-w-xl mt-3 text-white">
                 Be part of something impactful. Join our team to serve and uplift
                 communities through action and love.
               </p>
