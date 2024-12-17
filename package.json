@@ -29,7 +29,8 @@
   "devDependencies": {
     "@iconify-json/flat-color-icons": "^1.2.0",
     "@iconify-json/iconamoon": "^1.2.0",
-    "@prisma/client": "^5.20.0",
-    "@types/bcrypt": "^5.0.2"
+    "@prisma/client": "^5.22.0",
+    "@types/bcrypt": "^5.0.2",
+    "@vue/babel-plugin-jsx": "^1.2.5"
   }
 }
