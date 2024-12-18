@@ -40,7 +40,6 @@ export { slidOverInjectionKey, useSlideover } from '../node_modules/@nuxt/ui/dis
 export { useTimer } from '../node_modules/@nuxt/ui/dist/runtime/composables/useTimer';
 export { useToast } from '../node_modules/@nuxt/ui/dist/runtime/composables/useToast';
 export { useUI } from '../node_modules/@nuxt/ui/dist/runtime/composables/useUI';
-export { usePrismaClient } from '../node_modules/@prisma/nuxt/dist/runtime/composables/usePrismaClient';
 export { useUserSession } from '../node_modules/nuxt-auth-utils/dist/runtime/app/composables/session';
 export { useColorMode } from '../node_modules/@nuxtjs/color-mode/dist/runtime/composables';
 export { createNotivue, push, updateConfig, startInstance, stopInstance, usePush, useNotivue, useNotivueInstance, useNotifications, useNotivueKeyboard, lightTheme, pastelTheme, materialTheme, darkTheme, slateTheme, filledIcons, outlinedIcons } from 'notivue';

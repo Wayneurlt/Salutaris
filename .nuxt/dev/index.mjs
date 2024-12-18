@@ -353,10 +353,6 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "prisma": {
-      "log": [],
-      "errorFormat": "pretty"
-    },
     "notivue": {
       "limit": 3,
       "avoidDuplicates": true,

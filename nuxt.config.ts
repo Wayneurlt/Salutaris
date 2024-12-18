@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxtjs/tailwindcss",
     "@nuxt/icon",
-    "@prisma/nuxt",
     "nuxt-auth-utils",
     "notivue/nuxt",
     "@nuxt/image",

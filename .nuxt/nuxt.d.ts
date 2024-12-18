@@ -2,7 +2,6 @@
 /// <reference types="@nuxt/ui" />
 /// <reference types="@nuxtjs/tailwindcss" />
 /// <reference types="@nuxt/icon" />
-/// <reference types="@prisma/nuxt" />
 /// <reference types="nuxt-auth-utils" />
 /// <reference types="notivue" />
 /// <reference types="@nuxt/image" />
