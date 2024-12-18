@@ -2,7 +2,7 @@
     <!-- Hero Section -->
     <section class="relative flex min-h-screen w-full flex-col items-center justify-center">
       <!-- Animated Background -->
-      <LandingBg class="absolute inset-0 " />
+      <LandingBg/>
       
       <!-- Overlay for darker background -->
       <div class="absolute inset-0 z-[1] bg-black opacity-50"></div>
