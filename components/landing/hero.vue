@@ -43,13 +43,13 @@
         <div class="my-4 flex flex-row items-center justify-center gap-6">
           <NuxtLink
             to="/join"
-            class="px-6 py-3 text-lg font-semibold border-2 border-white bg-transparent text-white rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-500 hover:bg-yellow-500 hover:text-navyblue transition-all"
+            class="px-6 py-3 text-sm font-semibold border-2 border-white bg-transparent text-white rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-500 hover:bg-yellow-500 hover:text-navyblue transition-all"
           >
             Get Involved
           </NuxtLink>
           <NuxtLink
             to="/donate"
-            class="px-6 py-3 text-lg font-semibold border-2 border-yellow-500 bg-yellow-500 text-navyblue rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-500 hover:bg-transparent hover:text-white transition-all"
+            class="px-6 py-3 text-sm font-semibold border-2 border-yellow-500 bg-yellow-500 text-navyblue rounded-full focus:outline-none focus:ring-4 focus:ring-yellow-500 hover:bg-transparent hover:text-white transition-all"
           >
             Support Our Mission
           </NuxtLink>

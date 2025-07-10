@@ -5,11 +5,7 @@
     <LandingFeature/>
     <LandingInfo/>
     <LandingNews/>
-    <p>
-      <NuxtLink to="/about">About page</NuxtLink>
-    </p>
-    <p>
-      <NuxtLink to="/join">Join Us</NuxtLink>
-    </p>
+    <LandingUpdates/>
+    <LandingFoot/>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
     <section class="bg-[#ffffff] ">
         
-      <div class="container flex flex-col px-6 py-16 mx-auto ">
+      <div class="container flex flex-col px-6 py-16 mx-auto max-w-6xl ">
         <!-- Content Section -->
         <div class="order-2 mt-8 lg:order-1 lg:mt-0 lg:flex lg:items-center lg:-mx-6">
           <!-- Image 1 -->
