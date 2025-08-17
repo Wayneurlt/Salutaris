@@ -220,8 +220,10 @@ declare const inlineConfig = {
       "fuchsia",
       "pink",
       "rose",
-      "primary-color",
-      "primary"
+      "primary",
+      "navy",
+      "gold",
+      "accent"
     ],
     "strategy": "merge"
   }

@@ -1,132 +1,153 @@
 <template>
-  <div class="bg-white py-24 sm:py-32 overflow-hidden">
-    <div class="mx-auto max-w-full px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Stay Updated with Salutaris
-        </h2>
-        <p class="mt-2 text-lg leading-8 text-gray-600">
-          Get the latest news and updates from our community impact efforts.
-        </p>
-      </div>
-
-      <!-- Auto-scrolling Carousel Section -->
-      <div class="mt-16 overflow-hidden relative">
-        <div class="whitespace-nowrap flex animate-scroll">
-          <!-- Repeat the list twice for infinite illusion -->
-          <div class="flex gap-x-8">
-            <article
-              v-for="update in updates"
-              :key="`first-${update.id}`"
-              class="flex-shrink-0 w-[320px] flex flex-col items-start justify-between border border-gray-100 rounded-2xl shadow-sm bg-white overflow-hidden"
-            >
-              <div class="relative w-full">
-                <img
-                  :src="update.imageUrl"
-                  alt=""
-                  class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover"
-                />
-              </div>
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-center gap-x-4 text-xs">
-                  <time :datetime="update.datetime" class="text-gray-500">
-                    {{ update.date }}
-                  </time>
-                  <span
-                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-                  >
-                    {{ update.tag }}
-                  </span>
-                </div>
-                <div class="group relative flex-grow">
-                  <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 line-clamp-2">
-                    {{ update.title }}
-                  </h3>
-                  <p class="mt-3 text-sm leading-6 text-gray-600 line-clamp-3">
-                    {{ update.description }}
-                  </p>
-                </div>
-                <div class="relative mt-6 flex items-center gap-x-4">
-                  <img
-                    :src="update.author.imageUrl"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-100 object-cover"
-                  />
-                  <div class="text-sm leading-6 truncate">
-                    <p class="font-semibold text-gray-900 truncate">
-                      {{ update.author.name }}
-                    </p>
-                    <p class="text-gray-600 truncate">{{ update.author.role }}</p>
-                  </div>
-                </div>
-              </div>
-            </article>
+  <section class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <p class="text-sm font-semibold tracking-wide text-emerald-600">News & Updates</p>
+            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Stay updated with Salutaris
+            </h2>
+            <p class="mt-2 text-base leading-7 text-gray-600">
+              Stories from our programs, partners, and communities we serve.
+            </p>
           </div>
+          <div class="hidden sm:block shrink-0">
+            <a href="#" class="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/30">
+              View all updates
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+        </div>
 
-          <!-- Cloned for infinite scroll -->
-          <div class="flex gap-x-8">
+        <!-- Mobile: horizontal scroll -->
+        <div class="mt-10 -mx-6 overflow-x-auto pb-6 sm:-mx-8 lg:hidden">
+          <div class="px-6 sm:px-8 inline-flex gap-6 snap-x snap-mandatory">
             <article
-              v-for="update in updates"
-              :key="`second-${update.id}`"
-              class="flex-shrink-0 w-[320px] flex flex-col items-start justify-between border border-gray-100 rounded-2xl shadow-sm bg-white overflow-hidden"
+              v-for="item in items"
+              :key="`mobile-${item.id}`"
+              class="snap-start w-80 shrink-0 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow"
             >
-              <div class="relative w-full">
-                <img
-                  :src="update.imageUrl"
-                  alt=""
-                  class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover"
-                />
-              </div>
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-center gap-x-4 text-xs">
-                  <time :datetime="update.datetime" class="text-gray-500">
-                    {{ update.date }}
-                  </time>
-                  <span
-                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600"
-                  >
-                    {{ update.tag }}
+              <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/30 rounded-2xl">
+                <div class="relative">
+                  <img :src="item.imageUrl" :alt="item.title" class="aspect-[16/9] w-full rounded-t-2xl object-cover" />
+                  <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-100">
+                    {{ item.tag }}
                   </span>
                 </div>
-                <div class="group relative flex-grow">
-                  <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 line-clamp-2">
-                    {{ update.title }}
-                  </h3>
-                  <p class="mt-3 text-sm leading-6 text-gray-600 line-clamp-3">
-                    {{ update.description }}
-                  </p>
-                </div>
-                <div class="relative mt-6 flex items-center gap-x-4">
-                  <img
-                    :src="update.author.imageUrl"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-100 object-cover"
-                  />
-                  <div class="text-sm leading-6 truncate">
-                    <p class="font-semibold text-gray-900 truncate">
-                      {{ update.author.name }}
-                    </p>
-                    <p class="text-gray-600 truncate">{{ update.author.role }}</p>
+                <div class="p-5">
+                  <div class="flex items-center gap-3 text-xs text-gray-500">
+                    <time :datetime="item.datetime">{{ item.date }}</time>
+                    <span class="h-1 w-1 rounded-full bg-gray-300"></span>
+                    <span class="truncate">{{ item.author.name }}</span>
                   </div>
+                  <h3 class="mt-2 text-lg font-semibold text-gray-900 line-clamp-2">{{ item.title }}</h3>
+                  <p class="mt-2 text-sm text-gray-600 line-clamp-3">{{ item.description }}</p>
                 </div>
-              </div>
+              </a>
             </article>
           </div>
         </div>
+
+        <!-- Desktop: featured + grid -->
+        <div class="mt-12 hidden lg:grid lg:grid-cols-12 lg:gap-8">
+          <!-- Featured -->
+          <article v-if="featuredUpdate" class="relative col-span-5 xl:col-span-6 overflow-hidden rounded-3xl shadow-sm ring-1 ring-gray-200/60 bg-gray-900">
+            <a href="#" class="block focus:outline-none">
+              <div class="relative">
+                <img :src="featuredUpdate.imageUrl" :alt="featuredUpdate.title" class="h-80 w-full object-cover opacity-90" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                  <div class="flex items-center gap-3 text-xs text-white/80">
+                    <time :datetime="featuredUpdate.datetime">{{ featuredUpdate.date }}</time>
+                    <span class="h-1 w-1 rounded-full bg-white/50"></span>
+                    <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 ring-1 ring-inset ring-white/20">{{ featuredUpdate.tag }}</span>
+                  </div>
+                  <h3 class="mt-3 text-2xl font-bold leading-snug line-clamp-2">{{ featuredUpdate.title }}</h3>
+                  <p class="mt-2 text-sm text-white/90 line-clamp-3">{{ featuredUpdate.description }}</p>
+                  <div class="mt-4 flex items-center gap-3">
+                    <img :src="featuredUpdate.author.imageUrl" :alt="featuredUpdate.author.name" class="h-9 w-9 rounded-full object-cover ring-2 ring-white/50" />
+                    <div class="text-sm">
+                      <p class="font-semibold">{{ featuredUpdate.author.name }}</p>
+                      <p class="text-white/80">{{ featuredUpdate.author.role }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Others -->
+          <div class="col-span-7 xl:col-span-6 grid grid-cols-2 gap-8">
+            <article
+              v-for="item in otherUpdates"
+              :key="`grid-${item.id}`"
+              class="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <a href="#" class="block focus:outline-none">
+                <div class="relative">
+                  <img :src="item.imageUrl" :alt="item.title" class="h-44 w-full object-cover" />
+                  <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-100">
+                    {{ item.tag }}
+                  </span>
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center gap-3 text-xs text-gray-500">
+                    <time :datetime="item.datetime">{{ item.date }}</time>
+                    <span class="h-1 w-1 rounded-full bg-gray-300"></span>
+                    <span class="truncate">{{ item.author.name }}</span>
+                  </div>
+                  <h3 class="mt-2 text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-gray-700">{{ item.title }}</h3>
+                  <p class="mt-2 text-sm text-gray-600 line-clamp-3">{{ item.description }}</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <div class="mt-8 sm:hidden">
+          <a href="#" class="inline-flex items-center justify-center gap-2 w-full rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/30">
+            View all updates
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<script setup>
-const updates = [
+<script setup lang="ts">
+import { computed } from 'vue'
+
+type Author = {
+  name: string
+  role: string
+  imageUrl: string
+}
+
+type Update = {
+  id: number
+  title: string
+  description: string
+  imageUrl: string
+  date: string
+  datetime: string
+  tag: string
+  author: Author
+}
+
+const props = defineProps<{
+  updates?: Update[]
+}>()
+
+const defaultUpdates: Update[] = [
   {
     id: 1,
     title: 'Salutaris Launches Clean Water Project',
     description:
       'We have started a new project in rural communities to provide access to clean and safe drinking water.',
     imageUrl:
-      'https://images.unsplash.com/photo-1611146189390-d07c44b16175?auto=format&fit=crop&w=1350&q=80',
+      'https://images.pexels.com/photos/15204095/pexels-photo-15204095.jpeg',
     date: 'July 5, 2025',
     datetime: '2025-07-05',
     tag: 'Community',
@@ -240,24 +261,16 @@ const updates = [
     },
   },
 ]
+
+const items = computed<Update[]>(() => props.updates?.length ? props.updates : defaultUpdates)
+const featuredUpdate = computed<Update | undefined>(() => items.value[0])
+const otherUpdates = computed<Update[]>(() => items.value.slice(1))
 </script>
 
 <style scoped>
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 60s linear infinite;
-}
-
 .line-clamp-2 {
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -265,6 +278,7 @@ const updates = [
 
 .line-clamp-3 {
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;

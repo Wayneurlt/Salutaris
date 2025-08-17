@@ -1,8 +1,9 @@
 <template>
-  <section class="">
+  <NuxtLayout>
     <NuxtPage />
     <Notivue v-slot="item">
       <Notification :item="item" />
     </Notivue>
-  </section>
+  </NuxtLayout>
+  
 </template>

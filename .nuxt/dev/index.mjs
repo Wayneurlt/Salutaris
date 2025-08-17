@@ -318,8 +318,10 @@ const inlineAppConfig = {
       "fuchsia",
       "pink",
       "rose",
-      "primary-color",
-      "primary"
+      "primary",
+      "navy",
+      "gold",
+      "accent"
     ],
     "strategy": "merge"
   }
@@ -1027,7 +1029,7 @@ const _pJ2sad8rvu = (function(nitro) {
 
 const rootDir = "C:/Users/wayne/Desktop/Salutaris";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width,initial-scale=1"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/logo.png"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"}],"style":[],"script":[],"noscript":[],"title":"Salutaris"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width,initial-scale=1"},{"name":"description","content":"Salutaris is a community-based organization focused on making impactful changes across Africa through love in action and truth."},{"name":"keywords","content":"Africa, community, development, clean water, healthcare, education, youth empowerment"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/logo.png"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"}],"style":[],"script":[],"noscript":[],"title":"Salutaris - Love in Action and Truth"};
 
 const appRootTag = "div";
 

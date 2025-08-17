@@ -4,11 +4,7 @@
         <!-- Left Image Section -->
         <div class="hidden lg:block lg:w-2/3 relative">
           <!-- Background Image -->
-          <img
-            src="/assets/images/team.png"
-            alt="Join Us Background"
-            class="absolute inset-0 object-cover w-full h-full"
-          />
+          <img :src="teamImg" alt="Join Us Background" class="absolute inset-0 object-cover w-full h-full" />
           <!-- Overlay Content -->
           <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-60 relative z-10">
             <div>
@@ -29,11 +25,7 @@
             <!-- Header -->
             <div class="text-center">
               <div class="flex justify-center mx-auto">
-                <img
-                  class="w-auto h-7 sm:h-8"
-                  src="/assets/images/logo.png"
-                  alt="Logo"
-                />
+                <img class="w-auto h-7 sm:h-8" :src="logoImg" alt="Logo" />
               </div>
               <p class="mt-3 text-gray-500 dark:text-gray-300">
                 Fill in your details to join us
@@ -164,4 +156,8 @@
       </div>
     </div>
   </template>
-  
+
+<script setup lang="ts">
+import teamImg from '~/assets/images/team.png'
+import logoImg from '~/assets/images/logo.png'
+</script>

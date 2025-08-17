@@ -33,10 +33,12 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Salutaris",
+      title: "Salutaris - Love in Action and Truth",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width,initial-scale=1" },
+        { name: "description", content: "Salutaris is a community-based organization focused on making impactful changes across Africa through love in action and truth." },
+        { name: "keywords", content: "Africa, community, development, clean water, healthcare, education, youth empowerment" },
       ],
       link: [
         {
@@ -50,7 +52,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap",
         },
       ],
     },
